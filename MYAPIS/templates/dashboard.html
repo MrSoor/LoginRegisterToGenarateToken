@@ -1,0 +1,151 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/static/css/dash.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+<body class="p-8">
+    <div class="bg-white rounded-lg shadow-lg p-6">
+        <div class="bg-purple-500 text-white rounded-t-lg p-4 flex justify-between items-center">
+            <div class="flex space-x-4">
+                <i class="fas fa-bars text-xl"></i>
+                <div class="flex space-x-6">
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-home text-2xl"></i>
+                        <span class="text-xs">ROOMS</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-mobile-alt text-2xl"></i>
+                        <span class="text-xs">DEVICES</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-shield-alt text-2xl"></i>
+                        <span class="text-xs">SECURITY</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-chart-bar text-2xl"></i>
+                        <span class="text-xs">STATISTICS</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-film text-2xl"></i>
+                        <span class="text-xs">SCENES</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-users text-2xl"></i>
+                        <span class="text-xs">MEMBERS</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="bg-transparent text-white p-2 rounded-md hover:bg-purple-600">
+                    <i class="fas fa-bell text-xl"></i>
+                </a>
+                
+                <a href="#" class="bg-transparent text-white p-2 rounded-md hover:bg-purple-600">
+                    <i class="fas fa-envelope text-xl"></i>
+                </a>
+            
+                <a href="#" class="bg-transparent text-white p-2 rounded-md hover:bg-purple-600">
+                    <i class="fas fa-user-circle text-xl"></i>
+                </a>
+
+                <a href="/login" class="bg-transparent text-white p-2 rounded-md hover:bg-purple-600">
+                    <i class="fas fa-arrow-circle-right text-xl"></i>
+                </a>
+            </div>
+            
+        </div>
+        <div class="grid grid-cols-3 gap-4 mt-4">
+            <div class="bg-purple-500 text-white rounded-lg p-4 col-span-1">
+                <div class="text-2xl font-bold">JOHN</div>
+                <div class="text-lg">Welcome home</div>
+                <div class="flex items-center mt-4">
+                    <i class="fas fa-thermometer-half text-2xl"></i>
+                    <div class="ml-2 text-2xl">23°C</div>
+                </div>
+                <div class="mt-2">Sunny day</div>
+                <i class="fas fa-sun text-4xl mt-4"></i>
+            </div>
+            <div class="bg-white rounded-lg p-4 col-span-1">
+                <div class="text-lg font-bold">Temperature</div>
+                <div class="flex items-center justify-center mt-4">
+                    <div class="relative">
+                        <div class="w-24 h-24 rounded-full border-8 border-yellow-400"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-2xl">26°C</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg p-4 col-span-1">
+                <div class="text-lg font-bold">Lights intensity</div>
+                <div class="flex items-center justify-center mt-4">
+                    <div class="relative">
+                        <div class="w-24 h-24 rounded-full border-8 border-purple-500"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-2xl">78%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg p-4 col-span-2">
+                <div class="text-lg font-bold">General spendings</div>
+                <div class="mt-4">
+                    <canvas id="spendingsChart"></canvas>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg p-4 col-span-1">
+                <div class="text-lg font-bold">Consumption</div>
+                <div class="mt-4">
+                    <canvas id="consumptionChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-6 gap-4 mt-4">
+            <div class="flex flex-col items-center">
+                <div class="bg-gray-200 w-12 h-12 rounded-full flex items-center justify-center">
+                    <i class="fas fa-couch text-xl"></i>
+                </div>
+                <span class="text-xs mt-2">Living room</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="bg-purple-500 w-12 h-12 rounded-full flex items-center justify-center">
+                    <i class="fas fa-utensils text-xl text-white"></i>
+                </div>
+                <span class="text-xs mt-2">Kitchen</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="bg-gray-200 w-12 h-12 rounded-full flex items-center justify-center">
+                    <i class="fas fa-music text-xl"></i>
+                </div>
+                <span class="text-xs mt-2">Studio</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="bg-yellow-400 w-12 h-12 rounded-full flex items-center justify-center">
+                    <i class="fas fa-seedling text-xl"></i>
+                </div>
+                <span class="text-xs mt-2">Garden</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="bg-gray-200 w-12 h-12 rounded-full flex items-center justify-center">
+                    <i class="fas fa-bed text-xl"></i>
+                </div>
+                <span class="text-xs mt-2">Bathroom 1</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="bg-purple-500 w-12 h-12 rounded-full flex items-center justify-center">
+                    <i class="fas fa-bath text-xl text-white"></i>
+                </div>
+                <span class="text-xs mt-2">Bathroom 2</span>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/static/js/dash.js"></script>
+</body>
+</html>
